@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    * { box-sizing:border-box; }
+
+    body {
+        font-family: Helvetica;
+    }
+
+    form {
+        width: 400px;
+        margin: 4em auto;
+        padding: 3em 2em 2em 2em;
+        box-shadow: 0 10px 20px #DFE5FF;
+        border-radius: 20px;
+    }
+
+    input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        background: #fafafa;
+        color: #636363;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #757575;
+        margin-bottom: 15px;
+    }
+
+    label {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 12px 24px;
+        margin-top: 20px;
+        width: 100%;
+        vertical-align: middle;
+        color: #FF60B5;
+        background: #fff;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 1px;
+        border: 1px solid #FF60B5;
+        border-radius: 25px;
+        transition: all 150ms ease-out;
+    }
+
+    .button:hover {
+        background: #FF60B5;
+        color: #ffffff;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<div>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ book_form }}
+        <input type="submit" class="button" value="Add book">
+    </form>
+</div>
+</body>
+</html>

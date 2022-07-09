@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author</title>
+    <style>
+    .card {
+        margin: 0 auto;
+        width: 50%;
+        box-shadow: 0 10px 20px #DFE5FF;
+        border-radius: 20px;
+        padding: 30px;
+    }
+    h1 {
+        margin-bottom: 40px;
+    }
+    li {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+        img {
+        width: 125px;
+    }
+    a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 20px;
+    }
+    .btn {
+        border: 1px solid #FF60B5;
+        border-radius: 50px;
+        text-decoration: none;
+        display: block;
+        width: 200px;
+        text-align: center;
+        line-height: 3;
+        color: #FF60B5;
+        transition: all 150ms ease-out;
+    }
+    .btn:hover {
+        background: #FF60B5;
+        color: #ffffff;
+    }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>{{author}}, {{author.age}}</h1>
+        <ul>
+        {% for book in books %}
+            <li>
+                <img src="{{book.book_cover}}">
+                <span>
+                   <h2>{{book.title}}</h2>
+                   <a href="{% url 'book_detail' book.id%}">Read more...</a>
+                </span>
+            </li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'book_list' %}" class="btn">Go to book list</a>
+    </div>
+</body>
+</html>
